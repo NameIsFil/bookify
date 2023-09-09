@@ -1,15 +1,16 @@
-import { FC, PropsWithChildren } from 'react';
+import { FC, PropsWithChildren} from 'react';
 import {
     LayoutContainer,
 } from './Layout.styled';
 import {Navbar} from "./Navbar";
-import {FrontPage} from "./FrontPage";
 
-export const Layout: FC<PropsWithChildren> = () => {
+
+
+export const Layout: FC<PropsWithChildren> = (props) => {
   return (
     <LayoutContainer>
         <Navbar />
-        <FrontPage />
+        {props.children}
     </LayoutContainer>
   );
 };

@@ -10,29 +10,7 @@ type SearchFieldProps = {
 
 export const SearchField: FunctionComponent<SearchFieldProps> = (props) => {
     return (
-        // <StyledAutocomplete
-        //     id="autocomplete"
-        //     options={countries}
-        //     disableCloseOnSelect
-        //     getOptionLabel={(option: unknown) => (option as CountryType).label}
-        //     renderInput={(params) => <TextField {...params} label={props.name} />}
-        // />
         <div>
-            {/*<Box sx={{ display: 'flex', alignItems: 'flex-end' }}>*/}
-            {/*    <TextField*/}
-            {/*        id="input-with-sx"*/}
-            {/*        label={props.name}*/}
-            {/*        variant="outlined"*/}
-            {/*        InputProps={{*/}
-            {/*            startAdornment: (*/}
-            {/*                <InputAdornment position="start">*/}
-            {/*                    <AccountCircle />*/}
-            {/*                </InputAdornment>*/}
-            {/*            ),*/}
-            {/*        }}*/}
-            {/*    />*/}
-            {/*</Box>*/}
-
             <StyledAutocomplete
                 id="autocomplete"
                 options={countries}
@@ -44,9 +22,6 @@ export const SearchField: FunctionComponent<SearchFieldProps> = (props) => {
     );
 };
 
-
-
-
 interface CountryType {
     code: string;
     label: string;
@@ -54,7 +29,6 @@ interface CountryType {
     suggested?: boolean;
 }
 
-// From https://bitbucket.org/atlassian/atlaskit-mk-2/raw/4ad0e56649c3e6c973e226b7efaeb28cb240ccb0/packages/core/select/src/data/countries.js
 const countries: readonly CountryType[] = [
     { code: 'AD', label: 'Andorra', phone: '376' },
     {

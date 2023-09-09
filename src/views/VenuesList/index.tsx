@@ -1,3 +1,7 @@
+import { SearchField } from "../../shared/components/Layout/SearchField";
+import { SearchButton } from "../../shared/components/Layout/SearchButton";
+import { DropDownItem } from "../../shared/components/Layout/DropDownItem";
+import { VenueTable } from "./VenueTable";
 import {
     StyledFrontPageContainer,
     HeadText,
@@ -10,14 +14,13 @@ import {
     MainContainer,
     FilterContainer,
     VenueListContainer,
-    FilterTitle
-} from './FrontPage.styled.tsx';
-import { SearchField } from "../SearchField";
-import { SearchButton } from "../SearchButton";
-import { DropDownItem } from "../DropDownItem";
-import { VenueTable } from "../VenueTable";
+    FilterTitle,
+    VenueTableNavBar,
+    FilterNumber,
+    SortNumber
+} from './VenuesList.styled.tsx';
 
-export const FrontPage = () => {
+export const VenuesList = () => {
     return (
         <StyledFrontPageContainer>
             <TopFrontPage>
@@ -46,13 +49,17 @@ export const FrontPage = () => {
                         <FilterTitle>
                             FILTERS
                         </ FilterTitle>
-                        <DropDownItem />
-                        <DropDownItem />
-                        <DropDownItem />
-                        <DropDownItem />
-                        <DropDownItem />
+                        <DropDownItem name={"location"}/>
+                        <DropDownItem name={"price range"}/>
+                        <DropDownItem name={"tags"}/>
+                        <DropDownItem name={"add tag"}/>
+                        <DropDownItem name={"location"}/>
                     </FilterContainer>
                     <VenueListContainer>
+                        <VenueTableNavBar>
+                            <FilterNumber>Show 18 on the page</FilterNumber>
+                            <SortNumber>sort</SortNumber>
+                        </VenueTableNavBar >
                         <VenueTable />
                     </VenueListContainer>
                 </MainContainer>

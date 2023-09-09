@@ -10,7 +10,7 @@ export const StyledNavbarContainer = styled('div')`
   background-color: #FDFDFD;
   z-index: 2222;
   margin: 0px;
-  padding: 0px 120px;
+  padding: 0px 160px;
   box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.08);
   position: fixed;
 `;

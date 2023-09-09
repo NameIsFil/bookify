@@ -6,6 +6,7 @@ import FormControl from '@mui/material/FormControl';
 import ListItemText from '@mui/material/ListItemText';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
 import Checkbox from '@mui/material/Checkbox';
+import {FunctionComponent} from "react";
 
 const ITEM_HEIGHT = 48;
 const ITEM_PADDING_TOP = 8;
@@ -24,7 +25,11 @@ const prices = [
     '900-1500',
 ];
 
-export const  DropDownItem = () => {
+type DropDownItemProps = {
+    name: string
+}
+
+export const  DropDownItem: FunctionComponent<DropDownItemProps> = (props)  => {
     const [personName, setPersonName] = React.useState<string[]>([]);
 
     const handleChange = (event: SelectChangeEvent<typeof personName>) => {
@@ -39,14 +44,14 @@ export const  DropDownItem = () => {
     return (
         <div>
             <FormControl sx={{ m: 1, width: 300 }}>
-                <InputLabel id="demo-multiple-checkbox-label">Tag</InputLabel>
+                <InputLabel id="demo-multiple-checkbox-label">{props.name}</InputLabel>
                 <Select
                     labelId="demo-multiple-checkbox-label"
                     id="demo-multiple-checkbox"
                     multiple
                     value={personName}
                     onChange={handleChange}
-                    input={<OutlinedInput label="Tag" />}
+                    input={<OutlinedInput label={props.name} />}
                     renderValue={(selected) => selected.join(', ')}
                     MenuProps={MenuProps}
                 >
